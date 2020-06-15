@@ -1,0 +1,33 @@
+{
+  "name": "maestro/guide",
+  "description": "Maestro Framework - User Guide",
+  "license": "GPLv3",
+  "keywords": [
+    "framenet",
+    "annotation",
+    "frames",
+    "constructions"
+  ],
+  "authors": [
+    {
+      "name": "Ely Matos",
+      "email": "admin@ematos.net"
+    }
+  ],
+  "require": {
+  },
+  "autoload": {
+    "psr-4": {
+      "mguide\\": ""
+    },
+    "classmap": [
+      "../../core/classes/manager.php"
+    ]
+  },
+  "scripts": {
+    "post-autoload-dump": [
+      "Manager::createFileMap"
+    ]
+  }
+
+}
