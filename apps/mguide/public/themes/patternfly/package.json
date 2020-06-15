@@ -1,0 +1,15 @@
+{
+  "name": "maestro/guia",
+  "version": "1.0.0",
+  "description": "$ bower install patternfly --save",
+  "main": "theme.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "datatables.net-dt": "^1.10.19",
+    "patternfly": "^3.59.2"
+  }
+}

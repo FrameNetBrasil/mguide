@@ -1,0 +1,36 @@
+<nav class="navbar navbar-sidebar ">
+    <ul>
+        <li class="secondary-menu">
+            {{foreach $data->primary as $i => $p}}
+            <a class="secondary-menu-toggle"><span class="secondary-menu-toggle-icon"></span>{{$p[1]}}</a>
+            <ul>
+                {{foreach $data->secondary[$i] as $j => $s}}
+                {{if count($data->tertiary[$i][$j]) > 0 }}
+                <li>
+                    <a class="collapsed"
+                       role="button" data-toggle="collapse"
+                       href="#{{$j}}-secondary"
+                       aria-expanded="false"
+                       aria-controls="{{$j}}-secondary">
+                        {{$s[1]}}
+                    </a>
+                    <ul class="collapse "
+                        id="{{$j}}-secondary">
+                        {{foreach $data->tertiary[$i][$j] as $t}}
+                        <li>
+                            <a href="{{$manager->getAppURL($t[2])}}">{{$t[1]}}</a>
+                        </li>
+                        {{/foreach}}
+                    </ul>
+                </li>
+                {{else}}
+                <li>
+                    <a href="{{$manager->getAppURL($s[2])}}">{{$s[1]}}</a>
+                </li>
+                {{/if}}
+                {{/foreach}}
+            </ul>
+            {{/foreach}}
+        </li>
+    </ul>
+</nav><!--{ % endif % }-->
